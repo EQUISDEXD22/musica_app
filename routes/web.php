@@ -18,6 +18,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('albums/search', [AlbumController::class, 'search'])->name('albums.search');
+
 // Rutas públicas de álbumes
 Route::resource('albums', AlbumController::class)->only(['index', 'show', 'create']);
 
